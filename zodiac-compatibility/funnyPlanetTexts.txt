@@ -1,0 +1,38 @@
+{
+  "sun": {
+    "90": "Sol: Som den soldyrkare du är planerar du alltid nästa semester, medan din dejt plötsligt försvinner för att starta ett spontant beachparty med lokalbefolkningen. Ni är båda lika dramatiska som Lejonet på en karaoke-kväll. Och ändå, när ni möts, blir det eldigt och alla undrar om ni är med i en dokusåpa.",
+    "80": "Sol: Du försöker övertyga din dejt om att Väduren är bäst, men hen har redan bokat biljett till Oxens ostprovning. Ni har lika mycket energi som en Skorpion på speed, men ibland känns det som att ni är med i en svensk version av 'Love Island'.",
+    "70": "Sol: Som Tvillingarna på midsommar – du vill dansa små grodorna, din dejt vill diskutera existentialism med en Jungfru. Ni är som två stjärntecken i ett escape room, och ingen hittar ut.",
+    "0": "Sol: Du är Lejonet som vill ha all uppmärksamhet, men din dejt är Fiskarna som hellre pratar med bartendern. Ni är som Greta Thunberg och Elon Musk på en klimatkonferens – olika världar, men ändå fascinerande."
+  },
+  "moon": {
+    "90": "Måne: Ni har känslor djupare än Kräftans kylskåp efter midsommar. Din dejt skriver poesi om er relation och du gråter till 'Sagan om ringen'. Ni är som två Jungfrur som försöker organisera en överraskningsfest – det slutar med att ni båda städar.",
+    "80": "Måne: Du är Oxen som vill mysa, din dejt är Vattumannen som vill diskutera rymden. Ni är som Phoebe och Joey i Friends, fast med mer sill och mindre gitarr. Ingen förstår er, men ni har kul.",
+    "70": "Måne: Som Skorpionen på en blinddate – du analyserar varje ord, din dejt googlar 'hur man flyr en kräfta'. Ni är som Edward och Bella i Twilight, fast med mer regn och mindre vampyrer.",
+    "0": "Måne: Du är Vågen som vill ha harmoni, din dejt är Stenbocken som vill ha Excel-ark. Ni är som en svensk midsommar – känslor, regn och någon gråter över potatissalladen."
+  },
+  "venusMars": {
+    "90": "Venus/Mars: Ni har mer passion än en Oxen på chokladprovning. Din dejt är Lejonet som vill ha drama, du är Väduren som vill ha action. Tillsammans är ni som Brad Pitt och Angelina Jolie, fast med mer IKEA-möbler och mindre paparazzi.",
+    "80": "Venus/Mars: Du är Vågen som vill ha romantik, din dejt är Skorpionen som vill ha mystik. Ni är som Barbie och Ken, fast Ken har existentialistisk kris och Barbie har startat podd om astrologi.",
+    "70": "Venus/Mars: Som Shrek och Fiona – du är grön av avund, din dejt är grön av passion. Ni är som Taylor Swift och en break-up låt, fast på svenska.",
+    "0": "Venus/Mars: Du är Jungfrun som vill ha ordning, din dejt är Fiskarna som vill ha kaos. Ni är som två stjärntecken på Tinder – matchar ibland, men oftast swipear ni vidare."
+  },
+  "mercury": {
+    "90": "Merkurius: Ni kommunicerar bättre än Tvillingarna på Twitter. Din dejt är Vattumannen som skickar memes, du är Oxen som svarar med GIFs. Tillsammans är ni som PewDiePie och Minecraft – oväntat beroendeframkallande och ingen fattar varför.",
+    "80": "Merkurius: Du är Lejonet som vill prata om dig själv, din dejt är Jungfrun som vill prata om dig. Ni är som Ed Sheeran och en gitarr, fast med mer snack om vädret och mindre sång.",
+    "70": "Merkurius: Som Lady Gaga och Madonna – du är dramatisk, din dejt är ännu mer dramatisk. Ni är som två stjärntecken i en podd om astrologi, och ingen lyssnar.",
+    "0": "Merkurius: Du är Stenbocken som vill ha struktur, din dejt är Fiskarna som vill ha kaos. Ni är som Einstein och en astrolog – logik möter magi och ingen förstår någonting."
+  },
+  "jupiter": {
+    "90": "Jupiter: Ni har större visioner än Skytten på en backpacker-resa. Din dejt är Lejonet som vill starta företag, du är Vågen som vill starta bokcirkel. Tillsammans är ni som Elon Musk och rymden – stora planer, men ingen vet vad som händer.",
+    "80": "Jupiter: Du är Oxen som vill ha trygghet, din dejt är Vattumannen som vill ha äventyr. Ni är som Oprah och giveaways – alla får något, ingen vet vad. Och någon får en get.",
+    "70": "Jupiter: Som Zlatan och en mikrofon – du pratar, din dejt applåderar. Ni är som två stjärntecken på en reality-show, och ingen vill bli utröstad.",
+    "0": "Jupiter: Du är Skorpionen som vill ha kontroll, din dejt är Fiskarna som vill ha frihet. Ni är som en svensk reality-show – så dåligt att det blir bra, och alla vill se mer."
+  },
+  "saturn": {
+    "90": "Saturnus: Ni är stabila som Stenbocken på ett bokslut. Din dejt är Jungfrun som har med sig extranyckel till cykeln, du är Oxen som har med sig extranyckel till hjärtat. Tillsammans är ni som IKEA och manualer – stabilt, men någon tappar skruvarna.",
+    "80": "Saturnus: Du är Vågen som vill ha balans, din dejt är Lejonet som vill ha fest. Ni är som Morgan Freeman och visdom – tryggt och långsamt, men ibland glömmer ni varför ni träffades.",
+    "70": "Saturnus: Som en svensk chef – du vill ha ordning, din dejt vill ha fika. Ni är som två stjärntecken på ett personalmöte, och ingen vet vad som händer.",
+    "0": "Saturnus: Du är Fiskarna som glömmer bort tiden, din dejt är Väduren som glömmer bort dig. Ni är som en gammal Volvo – går alltid, men ingen vet varför, och någon har glömt besiktningen."
+  }
+}
