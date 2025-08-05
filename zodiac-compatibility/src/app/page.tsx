@@ -140,12 +140,12 @@ export default function Home() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Sparkles className="w-8 h-8 text-purple-500" />
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold text-black">
                 <span className="mr-1 text-base align-middle">✨</span>MATCH MADE IN HEAVEN<span className="ml-1 text-base align-middle">🌟</span>
               </h1>
               <Sparkles className="w-8 h-8 text-pink-500" />
             </div>
-            <p className="text-gray-600 max-w-md mx-auto">
+            <p className="text-black max-w-md mx-auto">
               <span className="text-base mr-1 align-middle">✨</span>Passar ni verkligen ihop? Fuck around and find out.<span className="ml-1 text-base align-middle">🌠</span> Fyll i födelsedatum nedan.
             </p>
           </div>
@@ -176,11 +176,11 @@ export default function Home() {
                     return emojis[sign] || '⭐'
                   }
                   return (
-                    <div className="text-center">
+                    <div className="text-center text-black">
                       <span className="text-lg font-semibold">Ditt stjärntecken:</span>
                       <span className="ml-2 text-xl">{getZodiacEmoji(birthData1.sun)} {birthData1.sun}</span>
                       <br />
-                      <span className="text-sm text-gray-500">Måntecken: {birthData1.moon}</span>
+                      <span className="text-sm">Måntecken: {birthData1.moon}</span>
                     </div>
                   )
                 })()}
@@ -195,11 +195,11 @@ export default function Home() {
                     return emojis[sign] || '⭐'
                   }
                   return (
-                    <div className="text-center">
+                    <div className="text-center text-black">
                       <span className="text-lg font-semibold">Din dejts stjärntecken:</span>
                       <span className="ml-2 text-xl">{getZodiacEmoji(birthData2.sun)} {birthData2.sun}</span>
                       <br />
-                      <span className="text-sm text-gray-500">Måntecken: {birthData2.moon}</span>
+                      <span className="text-sm">Måntecken: {birthData2.moon}</span>
                     </div>
                   )
                 })()}
