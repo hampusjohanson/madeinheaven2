@@ -89,7 +89,7 @@ export default function Home() {
                   <div className="bg-white rounded-xl shadow flex flex-col items-center min-h-[60px] w-[250px] mx-auto p-2">
                     <span className="font-bold text-sm text-gray-700 mb-1">Du</span>
                     <span className="text-base flex items-center gap-2 mb-1">
-                      {getFunEmoji(birthData1.sun)} {birthData1.sun}
+                      {getFunEmoji(birthData1.sun)} <span className="text-black">{birthData1.sun}</span>
                     </span>
                     <span className="text-xs text-gray-500 flex items-center gap-2">
                       <span>i måntecken</span> {birthData1.moon}
@@ -98,7 +98,7 @@ export default function Home() {
                   <div className="bg-white rounded-xl shadow flex flex-col items-center min-h-[60px] w-[250px] mx-auto p-2">
                     <span className="font-bold text-sm text-gray-700 mb-1">Din dejt</span>
                     <span className="text-base flex items-center gap-2 mb-1">
-                      {getFunEmoji(birthData2.sun)} {birthData2.sun}
+                      {getFunEmoji(birthData2.sun)} <span className="text-black">{birthData2.sun}</span>
                     </span>
                     <span className="text-xs text-gray-500 flex items-center gap-2">
                       <span>i måntecken</span> {birthData2.moon}

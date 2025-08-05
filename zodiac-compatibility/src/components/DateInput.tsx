@@ -25,17 +25,20 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
 
   // Skapa datumsträng när alla fält är ifyllda
   const handleChange = (type: 'year' | 'month' | 'day', value: string) => {
-    if (type === 'year') setYear(value);
-    if (type === 'month') setMonth(value);
-    if (type === 'day') setDay(value);
-    const y = type === 'year' ? value : year;
-    const m = type === 'month' ? value : month;
-    const d = type === 'day' ? value : day;
-    if (y && m && d) {
-      const monthNum = (months.indexOf(m) + 1).toString().padStart(2, '0');
-      const dayNum = d.padStart(2, '0');
-      const dateStr = `${y}-${monthNum}-${dayNum}`;
+    let newYear = year, newMonth = month, newDay = day;
+    if (type === 'year') newYear = value;
+    if (type === 'month') newMonth = value;
+    if (type === 'day') newDay = value;
+    setYear(type === 'year' ? value : year);
+    setMonth(type === 'month' ? value : month);
+    setDay(type === 'day' ? value : day);
+    if (newYear && newMonth && newDay) {
+      const monthNum = (months.indexOf(newMonth) + 1).toString().padStart(2, '0');
+      const dayNum = newDay.padStart(2, '0');
+      const dateStr = `${newYear}-${monthNum}-${dayNum}`;
       onDateChange(dateStr);
+    } else {
+      onDateChange(''); // Skickar tom sträng om datumet är ofullständigt
     }
   };
 
@@ -62,7 +65,7 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
         <select
           value={year}
           onChange={e => handleChange('year', e.target.value)}
-          className="p-3 border border-gray-300 rounded-xl bg-white shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="p-3 border border-gray-700 rounded-xl bg-white shadow-sm text-black focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
         >
           <option value="">År</option>
           {years.map(y => <option key={y} value={y}>{y}</option>)}
@@ -70,7 +73,7 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
         <select
           value={month}
           onChange={e => handleChange('month', e.target.value)}
-          className="p-3 border border-gray-300 rounded-xl bg-white shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="p-3 border border-gray-700 rounded-xl bg-white shadow-sm text-black focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
         >
           <option value="">Månad</option>
           {months.map(m => <option key={m} value={m}>{m}</option>)}
@@ -78,7 +81,7 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
         <select
           value={day}
           onChange={e => handleChange('day', e.target.value)}
-          className="p-3 border border-gray-300 rounded-xl bg-white shadow-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+          className="p-3 border border-gray-700 rounded-xl bg-white shadow-sm text-black focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
         >
           <option value="">Dag</option>
           {days.map(d => <option key={d} value={d}>{d}</option>)}
