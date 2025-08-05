@@ -1,0 +1,25 @@
+{
+  "sun": {
+    "Skorpionen": {
+      "Skorpionen": {
+        "90": "Sol: Två Skorpioner under solen? Ni är som två hemliga agenter på semester – ingen vet vad som händer, men det är garanterat dramatiskt och någon gråter över en drink.",
+        "80": "Sol: Skorpion möter Skorpion – ni försöker båda ta kontrollen över grillen, men slutar med att ni grillar varandra med sarkasm.",
+        "70": "Sol: Skorpion + Skorpion = två som planerar hämnd på varandra, men glömmer varför. Ni är som två Netflix-serier med för många säsonger.",
+        "0": "Sol: Ni ignorerar varandra så hårt att till och med solen blir förvirrad. Ingen vet om ni är ovänner eller bara spelar svåra."
+      }
+    }
+    
+  },
+  "moon": {
+    "Skorpionen": {
+      "Skorpionen": {
+        "90": "Måne: Era känslor är djupare än en svensk deckare. Ni skriver poesi om varandra, men ingen vågar läsa den högt.",
+        "80": "Måne: Ni har så mycket känslor att ni måste boka två separata terapitider. Ingen förstår er, inte ens ni själva.",
+        "70": "Måne: Ni analyserar varandras sms i timmar, men svarar aldrig. Era relationer är som ett escape room utan utgång.",
+        "0": "Måne: Ni är så emotionellt avstängda att till och med era husdjur undrar vad som händer."
+      }
+    }
+    
+  }
+  
+}
