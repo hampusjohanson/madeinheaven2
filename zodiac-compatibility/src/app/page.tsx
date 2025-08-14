@@ -160,25 +160,29 @@ export default function Home() {
               label="Ditt födelsedatum"
               placeholder="Välj ditt födelsedatum"
             />
-            {date1 && (() => {
-              const birthData1 = require('@/lib/birth-data').getBirthData(date1)
-              const getZodiacEmoji = (sign: string) => {
-                const emojis: Record<string, string> = {
-                  'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
-                  'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
-                  'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+            
+            {/* Fast plats för första stjärntecknet */}
+            <div className="text-center mt-2 mb-8" style={{ minHeight: '4rem' }}>
+              {date1 && (() => {
+                const birthData1 = require('@/lib/birth-data').getBirthData(date1)
+                const getZodiacEmoji = (sign: string) => {
+                  const emojis: Record<string, string> = {
+                    'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
+                    'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
+                    'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+                  }
+                  return emojis[sign] || '⭐'
                 }
-                return emojis[sign] || '⭐'
-              }
-              return (
-                <div className="text-center mt-2 mb-8">
-                  <span className="text-lg font-semibold">Ditt stjärntecken:</span>
-                  <span className="ml-2 text-xl">{getZodiacEmoji(birthData1.sun)} {birthData1.sun}</span>
-                  <br />
-                  <span className="text-sm text-white">Måntecken: {birthData1.moon}</span>
-                </div>
-              )
-            })()}
+                return (
+                  <>
+                    <span className="text-lg font-semibold">Ditt stjärntecken:</span>
+                    <span className="ml-2 text-xl">{getZodiacEmoji(birthData1.sun)} {birthData1.sun}</span>
+                    <br />
+                    <span className="text-sm text-white">Måntecken: {birthData1.moon}</span>
+                  </>
+                )
+              })()}
+            </div>
 
             <div className="flex justify-center my-8" style={{ position: 'relative', height: '4.5rem' }}>
               <Heart className="w-32 h-32 text-pink-500 animate-pulse fill-pink-500" style={{ position: 'absolute', top: '25%' }} />
@@ -191,25 +195,29 @@ export default function Home() {
                 placeholder="Välj din dejts födelsedatum"
               />
             </div>
-            {date2 && (() => {
-              const birthData2 = require('@/lib/birth-data').getBirthData(date2)
-              const getZodiacEmoji = (sign: string) => {
-                const emojis: Record<string, string> = {
-                  'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
-                  'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
-                  'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+            
+            {/* Fast plats för andra stjärntecknet */}
+            <div className="text-center mt-2 mb-8" style={{ minHeight: '4rem' }}>
+              {date2 && (() => {
+                const birthData2 = require('@/lib/birth-data').getBirthData(date2)
+                const getZodiacEmoji = (sign: string) => {
+                  const emojis: Record<string, string> = {
+                    'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
+                    'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
+                    'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+                  }
+                  return emojis[sign] || '⭐'
                 }
-                return emojis[sign] || '⭐'
-              }
-              return (
-                <div className="text-center mt-2 mb-8">
-                  <span className="text-lg font-semibold">Din dejts stjärntecken:</span>
-                  <span className="ml-2 text-xl">{getZodiacEmoji(birthData2.sun)} {birthData2.sun}</span>
-                  <br />
-                  <span className="text-sm text-white">Måntecken: {birthData2.moon}</span>
-                </div>
-              )
-            })()}
+                return (
+                  <>
+                    <span className="text-lg font-semibold">Din dejts stjärntecken:</span>
+                    <span className="ml-2 text-xl">{getZodiacEmoji(birthData2.sun)} {birthData2.sun}</span>
+                    <br />
+                    <span className="text-sm text-white">Måntecken: {birthData2.moon}</span>
+                  </>
+                )
+              })()}
+            </div>
 
             {/* Calculate Button */}
             <motion.button

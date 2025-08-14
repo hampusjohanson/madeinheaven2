@@ -129,9 +129,12 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
     mainFunnyText = mainFunnyText.replace(/^Sol:\s*/, '')
   }
   return (
-    <div className="flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 bg-white rounded-xl shadow relative">
+    <div className="flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 rounded-xl shadow relative border border-gray-300" style={{ 
+      backgroundColor: 'rgba(220, 220, 220, 0.95)',
+      backdropFilter: 'blur(2px)'
+    }}>
       {/* Ingen emoji, bara ren text */}
-      <p className="text-gray-700 text-lg font-medium text-center">
+      <p className="text-black text-lg font-medium text-center">
         {mainFunnyText}
       </p>
 
@@ -157,27 +160,31 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
                 key={planet}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="bg-gray-50 rounded-lg p-4 relative"
+                className="rounded-lg p-4 relative border border-gray-300" style={{ 
+                  backgroundColor: 'rgba(220, 220, 220, 0.95)',
+                  backdropFilter: 'blur(2px)'
+                }}
               >
                 <span className="absolute top-1 right-2 text-xl select-none">✨</span>
                 <span className="absolute bottom-1 left-2 text-xl select-none">🧙‍♂️</span>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     {emoji && <span className="text-2xl">{emoji}</span>}
-                    <span className="font-medium text-gray-900">{name}</span>
+                    <span className="font-medium text-black">{name}</span>
                     <span className="ml-1 text-lg">🌟</span>
                   </div>
-                  <span className="text-lg font-bold text-purple-600">{score}% <span className="ml-1">🪄</span></span>
+                  <span className="text-lg font-bold text-black">{score}% <span className="ml-1">🪄</span></span>
                 </div>
-                <p className="text-sm text-gray-600 mb-2">{description} <span className="ml-1">🔮</span></p>
-                <p className="text-sm text-pink-600 mb-2 font-bold">{funnyText} <span className="ml-1">✨</span></p>
+                <p className="text-sm text-black mb-2">{description} <span className="ml-1">🔮</span></p>
+                <p className="text-sm text-black mb-2 font-bold">{funnyText} <span className="ml-1">✨</span></p>
                 {/* Progress bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-300 rounded-full h-2">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${score}%` }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                    className="h-2 rounded-full"
+                    style={{ backgroundColor: 'rgb(var(--accent-gold))' }}
                   />
                 </div>
               </motion.div>
