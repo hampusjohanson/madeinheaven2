@@ -18,6 +18,13 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(15, 15, 70);
+
+/* Force zodiac symbols to be white */
+.zodiac-symbol {
+  color: white !important;
+  -webkit-text-fill-color: white !important;
+  text-shadow: none !important;
+}
   background-attachment: fixed;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   min-height: 100vh;

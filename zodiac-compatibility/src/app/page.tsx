@@ -167,16 +167,16 @@ export default function Home() {
                 const birthData1 = require('@/lib/birth-data').getBirthData(date1)
                 const getZodiacEmoji = (sign: string) => {
                   const emojis: Record<string, string> = {
-                    'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
-                    'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
-                    'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+                    'Väduren': '🐏', 'Oxen': '🐂', 'Tvillingarna': '👥', 'Kräftan': '🦀',
+                    'Lejonet': '🦁', 'Jungfrun': '👩', 'Vågen': '⚖️', 'Skorpionen': '🦂',
+                    'Skytten': '🏹', 'Stenbocken': '🐐', 'Vattumannen': '🏺', 'Fiskarna': '🐟'
                   }
                   return emojis[sign] || '⭐'
                 }
                 return (
                   <>
                     <span className="text-lg font-semibold">Ditt stjärntecken:</span>
-                    <span className="ml-2 text-xl">{getZodiacEmoji(birthData1.sun)} {birthData1.sun}</span>
+                    <span className="ml-2 text-xl text-white">{getZodiacEmoji(birthData1.sun)} {birthData1.sun}</span>
                     <br />
                     <span className="text-sm text-white">Måntecken: {birthData1.moon}</span>
                   </>
@@ -202,16 +202,16 @@ export default function Home() {
                 const birthData2 = require('@/lib/birth-data').getBirthData(date2)
                 const getZodiacEmoji = (sign: string) => {
                   const emojis: Record<string, string> = {
-                    'Väduren': '♈', 'Oxen': '♉', 'Tvillingarna': '♊', 'Kräftan': '♋',
-                    'Lejonet': '♌', 'Jungfrun': '♍', 'Vågen': '♎', 'Skorpionen': '♏',
-                    'Skytten': '♐', 'Stenbocken': '♑', 'Vattumannen': '♒', 'Fiskarna': '♓'
+                    'Väduren': '🐏', 'Oxen': '🐂', 'Tvillingarna': '👥', 'Kräftan': '🦀',
+                    'Lejonet': '🦁', 'Jungfrun': '👩', 'Vågen': '⚖️', 'Skorpionen': '🦂',
+                    'Skytten': '🏹', 'Stenbocken': '🐐', 'Vattumannen': '🏺', 'Fiskarna': '🐟'
                   }
                   return emojis[sign] || '⭐'
                 }
                 return (
                   <>
                     <span className="text-lg font-semibold">Din dejts stjärntecken:</span>
-                    <span className="ml-2 text-xl">{getZodiacEmoji(birthData2.sun)} {birthData2.sun}</span>
+                    <span className="ml-2 text-xl text-white">{getZodiacEmoji(birthData2.sun)} {birthData2.sun}</span>
                     <br />
                     <span className="text-sm text-white">Måntecken: {birthData2.moon}</span>
                   </>
@@ -253,7 +253,7 @@ export default function Home() {
 
       {/* Fullscreen Countdown Overlay */}
       {countdown !== null && countdown > 0 && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-purple-900 via-pink-700 to-yellow-400 animate-gradient bg-opacity-90">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-opacity-90" style={{ backgroundColor: 'rgb(var(--primary-midnight-blue))' }}>
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1.1, opacity: 1 }}
@@ -273,18 +273,20 @@ export default function Home() {
             </motion.span>
           </motion.div>
           <div className="text-white text-2xl font-bold mt-4">
-            {countdown === 5 && 'Startar kärleksraketen...'}
-            {countdown === 4 && 'Håll i dig!'}
-            {countdown === 3 && 'Astroboost laddas...'}
-            {countdown === 2 && 'Snart magi!'}
-            {countdown === 1 && 'BOOM! 💥'}
+            <div className="text-center whitespace-pre-line">
+              {countdown === 5 && 'Spårar planetpositioner\nfrån lokal cache'}
+              {countdown === 4 && 'API-koppling till universum\nmisslyckades'}
+              {countdown === 3 && 'Kontaktar\nRegina Lund'}
+              {countdown === 2 && 'Avkodar\nemotionell metadata'}
+              {countdown === 1 && 'Körning slutförd\n– resultat laddar'}
+            </div>
           </div>
         </div>
       )}
 
       {/* Result: Visa endast resultatsidan */}
       {showResult && result && (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-yellow-100 to-purple-100 px-4 w-full">
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 w-full" style={{ backgroundColor: 'rgb(var(--primary-midnight-blue))' }}>
           <div className="flex flex-col items-center justify-center gap-8 w-full" style={{ minHeight: '70vh' }}>
             {date1 && date2 && (() => {
               const birthData1 = require('@/lib/birth-data').getBirthData(date1);
@@ -297,27 +299,27 @@ export default function Home() {
               const getFunEmoji = (sign: string) => funEmojis[sign] || '⭐';
               return (
                 <>
-                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6" style={{ backgroundColor: 'rgb(var(--primary-midnight-blue))' }}>
-                    <span className="font-bold text-lg text-white mb-2">Du</span>
-                    <span className="text-xl flex items-center gap-2 mb-1 text-white">
+                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 border border-gray-300" style={{ backgroundColor: 'rgba(240, 240, 240, 0.9)', backdropFilter: 'blur(2px)' }}>
+                    <span className="font-bold text-lg mb-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>Du</span>
+                    <span className="text-xl flex items-center gap-2 mb-1" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>
                       {getFunEmoji(birthData1.sun)} {birthData1.sun}
                     </span>
-                    <span className="text-md text-white flex items-center gap-2">
+                    <span className="text-md flex items-center gap-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>
                       <span>i måntecken</span> {birthData1.moon}
                     </span>
                   </div>
-                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6" style={{ backgroundColor: 'rgb(var(--primary-midnight-blue))' }}>
-                    <span className="font-bold text-lg text-white mb-2">Din dejt</span>
-                    <span className="text-xl flex items-center gap-2 mb-1 text-white">
+                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 border border-gray-300" style={{ backgroundColor: 'rgba(240, 240, 240, 0.9)', backdropFilter: 'blur(2px)' }}>
+                    <span className="font-bold text-lg mb-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>Din dejt</span>
+                    <span className="text-xl flex items-center gap-2 mb-1" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>
                       {getFunEmoji(birthData2.sun)} {birthData2.sun}
                     </span>
-                    <span className="text-md text-white flex items-center gap-2">
+                    <span className="text-md flex items-center gap-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>
                       <span>i måntecken</span> {birthData2.moon}
                     </span>
                   </div>
-                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6" style={{ backgroundColor: 'rgb(var(--primary-midnight-blue))' }}>
-                    <span className="font-bold text-lg text-white mb-2">Kompatibilitet</span>
-                    <span className="text-3xl font-extrabold text-pink-600">
+                  <div className="rounded-xl shadow flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 border border-gray-300" style={{ backgroundColor: 'rgba(240, 240, 240, 0.9)', backdropFilter: 'blur(2px)' }}>
+                    <span className="font-bold text-lg mb-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>Kompatibilitet</span>
+                    <span className="text-3xl font-extrabold" style={{ color: 'rgb(var(--accent-gold))' }}>
                       {(() => {
                         const scores = [
                           result.breakdown.sun,

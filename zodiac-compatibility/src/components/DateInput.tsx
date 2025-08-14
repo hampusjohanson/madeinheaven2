@@ -58,7 +58,7 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
       className="space-y-3"
     >
   <div 
-    className="inline-block px-3 py-2 rounded-lg border border-gray-300 mb-3" 
+    className="inline-block px-3 py-2 rounded-lg border border-gray-300 mb-3 pointer-events-none select-none" 
     style={{ 
       backgroundColor: 'rgba(220, 220, 220, 0.95)',
       backdropFilter: 'blur(2px)'

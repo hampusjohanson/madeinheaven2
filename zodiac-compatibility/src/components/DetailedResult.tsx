@@ -130,11 +130,11 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
   }
   return (
     <div className="flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 rounded-xl shadow relative border border-gray-300" style={{ 
-      backgroundColor: 'rgba(220, 220, 220, 0.95)',
+      backgroundColor: 'rgba(240, 240, 240, 0.9)',
       backdropFilter: 'blur(2px)'
     }}>
       {/* Ingen emoji, bara ren text */}
-      <p className="text-black text-lg font-medium text-center">
+      <p className="text-lg font-medium text-center" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>
         {mainFunnyText}
       </p>
 
@@ -161,7 +161,7 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="rounded-lg p-4 relative border border-gray-300" style={{ 
-                  backgroundColor: 'rgba(220, 220, 220, 0.95)',
+                  backgroundColor: 'rgba(240, 240, 240, 0.9)',
                   backdropFilter: 'blur(2px)'
                 }}
               >
@@ -170,13 +170,13 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     {emoji && <span className="text-2xl">{emoji}</span>}
-                    <span className="font-medium text-black">{name}</span>
+                    <span className="font-medium" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>{name}</span>
                     <span className="ml-1 text-lg">🌟</span>
                   </div>
-                  <span className="text-lg font-bold text-black">{score}% <span className="ml-1">🪄</span></span>
+                  <span className="text-lg font-bold" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>{score}% <span className="ml-1">🪄</span></span>
                 </div>
-                <p className="text-sm text-black mb-2">{description} <span className="ml-1">🔮</span></p>
-                <p className="text-sm text-black mb-2 font-bold">{funnyText} <span className="ml-1">✨</span></p>
+                <p className="text-sm mb-2" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>{description} <span className="ml-1">🔮</span></p>
+                <p className="text-sm mb-2 font-bold" style={{ color: 'rgb(var(--primary-midnight-blue))' }}>{funnyText} <span className="ml-1">✨</span></p>
                 {/* Progress bar */}
                 <div className="w-full bg-gray-300 rounded-full h-2">
                   <motion.div
