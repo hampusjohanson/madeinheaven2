@@ -24,49 +24,21 @@ body {
   position: relative;
 }
 
-/* Stjärnbilder med blinkande streck */
+/* Enkel bakgrund utan störande blinkande ljus */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  /* Bara få subtila stjärnor som bakgrund */
   background: 
-    /* Stjärnor */
-    radial-gradient(circle at 20% 25%, white 2px, transparent 3px),
-    radial-gradient(circle at 25% 30%, white 1.5px, transparent 2.5px),
-    radial-gradient(circle at 30% 20%, white 2.5px, transparent 3px),
-    radial-gradient(circle at 18% 35%, white 1.8px, transparent 2.5px),
-    /* Mer stjärnor */
-    radial-gradient(circle at 70% 15%, white 2px, transparent 3px),
-    radial-gradient(circle at 75% 20%, white 1.6px, transparent 2.5px),
-    radial-gradient(circle at 80% 25%, white 2.2px, transparent 3px),
-    radial-gradient(circle at 85% 30%, white 1.7px, transparent 2.5px),
-    /* Streck mellan stjärnor (horisontella) */
-    linear-gradient(45deg, transparent 19.5%, white 20%, white 20.2%, transparent 20.7%),
-    linear-gradient(35deg, transparent 24.5%, white 25%, white 25.2%, transparent 25.7%),
-    linear-gradient(55deg, transparent 29.5%, white 30%, white 30.2%, transparent 30.7%),
-    /* Streck för andra konstellationen */
-    linear-gradient(15deg, transparent 69.5%, white 70%, white 70.2%, transparent 70.7%),
-    linear-gradient(25deg, transparent 74.5%, white 75%, white 75.2%, transparent 75.7%),
-    linear-gradient(35deg, transparent 79.5%, white 80%, white 80.2%, transparent 80.7%);
-  
-  animation: constellation-blink 3s ease-in-out infinite;
-}
-
-@keyframes constellation-blink {
-  0%, 100% { 
-    opacity: 0.8; 
-  }
-  25% { 
-    opacity: 0.3; 
-  }
-  50% { 
-    opacity: 0.9; 
-  }
-  75% { 
-    opacity: 0.4; 
-  }
+    radial-gradient(circle at 10% 20%, white 0.5px, transparent 1px),
+    radial-gradient(circle at 90% 30%, white 0.7px, transparent 1px),
+    radial-gradient(circle at 30% 80%, white 0.4px, transparent 1px),
+    radial-gradient(circle at 80% 10%, white 0.6px, transparent 1px),
+    radial-gradient(circle at 50% 50%, white 0.3px, transparent 1px);
+  opacity: 0.6;
 }
 
 ::-webkit-scrollbar {

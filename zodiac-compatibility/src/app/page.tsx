@@ -56,91 +56,102 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Blinkande stjärnbilder */}
+          {/* Äkta stjärnbilder som konstellationer */}
           <svg 
             className="fixed inset-0 w-full h-full pointer-events-none" 
             style={{ zIndex: 1 }}
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Konstellation 1 - Orion-liknande */}
+            {/* Cassiopeia - W-formad konstellation */}
             <g>
-              <circle cx="15%" cy="20%" r="2" fill="white">
-                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="20%" cy="25%" r="1.5" fill="white">
-                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.8s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="25%" cy="15%" r="1.8" fill="white">
-                <animate attributeName="opacity" values="0.9;0.4;0.9" dur="2.3s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="12%" cy="30%" r="1.4" fill="white">
-                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.1s" repeatCount="indefinite"/>
-              </circle>
-              {/* Streck mellan stjärnorna */}
-              <line x1="15%" y1="20%" x2="20%" y2="25%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
-              </line>
-              <line x1="20%" y1="25%" x2="25%" y2="15%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite"/>
-              </line>
-              <line x1="15%" y1="20%" x2="12%" y2="30%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.8s" repeatCount="indefinite"/>
-              </line>
-              <line x1="25%" y1="15%" x2="12%" y2="30%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.2s" repeatCount="indefinite"/>
-              </line>
+              <circle cx="10%" cy="15%" r="1.5" fill="white" opacity="0.9"/>
+              <circle cx="15%" cy="12%" r="1.2" fill="white" opacity="0.8"/>
+              <circle cx="20%" cy="18%" r="1.4" fill="white" opacity="0.9"/>
+              <circle cx="25%" cy="10%" r="1.3" fill="white" opacity="0.8"/>
+              <circle cx="30%" cy="16%" r="1.6" fill="white" opacity="0.9"/>
+              <polyline points="10%,15% 15%,12% 20%,18% 25%,10% 30%,16%" stroke="white" strokeWidth="0.3" opacity="0.6"/>
             </g>
 
-            {/* Konstellation 2 - Big Dipper-liknande */}
+            {/* Orion - den stora jägaren */}
             <g>
-              <circle cx="70%" cy="15%" r="1.8" fill="white">
-                <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.9s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="75%" cy="20%" r="1.6" fill="white">
-                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="80%" cy="25%" r="2" fill="white">
-                <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.4s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="85%" cy="30%" r="1.5" fill="white">
-                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.7s" repeatCount="indefinite"/>
-              </circle>
-              {/* Streck för big dipper */}
-              <line x1="70%" y1="15%" x2="75%" y2="20%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.2s" repeatCount="indefinite"/>
-              </line>
-              <line x1="75%" y1="20%" x2="80%" y2="25%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.8s" repeatCount="indefinite"/>
-              </line>
-              <line x1="80%" y1="25%" x2="85%" y2="30%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.4;0.2;0.4" dur="3.5s" repeatCount="indefinite"/>
-              </line>
+              {/* Orions bälte */}
+              <circle cx="70%" cy="25%" r="1.8" fill="white" opacity="0.9"/>
+              <circle cx="72%" cy="27%" r="1.6" fill="white" opacity="0.8"/>
+              <circle cx="74%" cy="29%" r="1.7" fill="white" opacity="0.9"/>
+              {/* Orions axlar */}
+              <circle cx="68%" cy="20%" r="1.4" fill="white" opacity="0.8"/>
+              <circle cx="76%" cy="22%" r="1.5" fill="white" opacity="0.8"/>
+              {/* Orions höfter */}
+              <circle cx="69%" cy="35%" r="1.3" fill="white" opacity="0.7"/>
+              <circle cx="75%" cy="37%" r="1.4" fill="white" opacity="0.8"/>
+              
+              {/* Bältet */}
+              <line x1="70%" y1="25%" x2="72%" y2="27%" stroke="white" strokeWidth="0.4" opacity="0.6"/>
+              <line x1="72%" y1="27%" x2="74%" y2="29%" stroke="white" strokeWidth="0.4" opacity="0.6"/>
+              {/* Kropp */}
+              <line x1="68%" y1="20%" x2="70%" y2="25%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="76%" y1="22%" x2="74%" y2="29%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="70%" y1="25%" x2="69%" y2="35%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="74%" y1="29%" x2="75%" y2="37%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
             </g>
 
-            {/* Konstellation 3 - Kassiopeja-liknande */}
+            {/* Stora Björn (Big Dipper) */}
             <g>
-              <circle cx="45%" cy="70%" r="1.9" fill="white">
-                <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.1s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="50%" cy="75%" r="1.6" fill="white">
-                <animate attributeName="opacity" values="0.6;0.8;0.6" dur="1.9s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="55%" cy="68%" r="1.8" fill="white">
-                <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.3s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="60%" cy="73%" r="1.4" fill="white">
-                <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.0s" repeatCount="indefinite"/>
-              </circle>
-              {/* Kassiopeja-streck */}
-              <line x1="45%" y1="70%" x2="50%" y2="75%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3.5s" repeatCount="indefinite"/>
-              </line>
-              <line x1="50%" y1="75%" x2="55%" y2="68%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.7s" repeatCount="indefinite"/>
-              </line>
-              <line x1="55%" y1="68%" x2="60%" y2="73%" stroke="white" strokeWidth="0.5">
-                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.1s" repeatCount="indefinite"/>
-              </line>
+              <circle cx="15%" cy="60%" r="1.5" fill="white" opacity="0.8"/>
+              <circle cx="20%" cy="62%" r="1.4" fill="white" opacity="0.9"/>
+              <circle cx="25%" cy="61%" r="1.6" fill="white" opacity="0.8"/>
+              <circle cx="30%" cy="58%" r="1.3" fill="white" opacity="0.8"/>
+              <circle cx="28%" cy="65%" r="1.4" fill="white" opacity="0.7"/>
+              <circle cx="32%" cy="68%" r="1.2" fill="white" opacity="0.8"/>
+              <circle cx="36%" cy="70%" r="1.5" fill="white" opacity="0.9"/>
+              
+              {/* Sleven */}
+              <polyline points="15%,60% 20%,62% 25%,61% 30%,58%" stroke="white" strokeWidth="0.3" opacity="0.6"/>
+              {/* Handtaget */}
+              <polyline points="30%,58% 28%,65% 32%,68% 36%,70%" stroke="white" strokeWidth="0.3" opacity="0.6"/>
+            </g>
+
+            {/* Leo (Lejonet) */}
+            <g>
+              <circle cx="85%" cy="50%" r="1.7" fill="white" opacity="0.9"/>
+              <circle cx="88%" cy="45%" r="1.3" fill="white" opacity="0.8"/>
+              <circle cx="90%" cy="52%" r="1.5" fill="white" opacity="0.8"/>
+              <circle cx="85%" cy="58%" r="1.4" fill="white" opacity="0.8"/>
+              <circle cx="80%" cy="55%" r="1.2" fill="white" opacity="0.7"/>
+              <circle cx="92%" cy="60%" r="1.6" fill="white" opacity="0.9"/>
+              
+              {/* Lejonets kropp */}
+              <line x1="85%" y1="50%" x2="88%" y2="45%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="88%" y1="45%" x2="90%" y2="52%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="85%" y1="50%" x2="85%" y2="58%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="80%" y1="55%" x2="85%" y2="58%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="90%" y1="52%" x2="92%" y2="60%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+            </g>
+
+            {/* Cygnus (Svanen) */}
+            <g>
+              <circle cx="50%" cy="5%" r="1.4" fill="white" opacity="0.8"/>
+              <circle cx="52%" cy="10%" r="1.6" fill="white" opacity="0.9"/>
+              <circle cx="54%" cy="15%" r="1.3" fill="white" opacity="0.8"/>
+              <circle cx="48%" cy="12%" r="1.2" fill="white" opacity="0.7"/>
+              <circle cx="56%" cy="12%" r="1.5" fill="white" opacity="0.8"/>
+              
+              {/* Svanens kors */}
+              <line x1="50%" y1="5%" x2="54%" y2="15%" stroke="white" strokeWidth="0.3" opacity="0.6"/>
+              <line x1="48%" y1="12%" x2="56%" y2="12%" stroke="white" strokeWidth="0.3" opacity="0.6"/>
+            </g>
+
+            {/* Andromeda */}
+            <g>
+              <circle cx="40%" cy="85%" r="1.5" fill="white" opacity="0.8"/>
+              <circle cx="45%" cy="82%" r="1.3" fill="white" opacity="0.9"/>
+              <circle cx="48%" cy="87%" r="1.4" fill="white" opacity="0.8"/>
+              <circle cx="52%" cy="84%" r="1.6" fill="white" opacity="0.9"/>
+              <circle cx="42%" cy="90%" r="1.2" fill="white" opacity="0.7"/>
+              
+              {/* Andromedas kedja */}
+              <polyline points="40%,85% 45%,82% 48%,87% 52%,84%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
+              <line x1="40%" y1="85%" x2="42%" y2="90%" stroke="white" strokeWidth="0.3" opacity="0.5"/>
             </g>
           </svg>
           <div className="max-w-md mx-auto flex flex-col" style={{ minHeight: '70vh' }}>
@@ -218,9 +229,10 @@ export default function Home() {
                 }, 700);
               }}
               disabled={!date1 || !date2}
-              className="w-full py-4 px-6 text-black font-semibold rounded-xl shadow-lg disabled:opacity-50 disabled:cursor-not-allowed mt-auto"
+              className="w-full py-4 px-6 text-black font-semibold rounded-xl shadow-lg disabled:opacity-50 disabled:cursor-not-allowed mt-auto border border-gray-300"
               style={{ 
-                backgroundColor: 'rgb(var(--accent-light-gray))'
+                backgroundColor: 'rgba(220, 220, 220, 0.95)',
+                backdropFilter: 'blur(2px)'
               }}
             >
               <Zap className="w-5 h-5 inline mr-2" />
