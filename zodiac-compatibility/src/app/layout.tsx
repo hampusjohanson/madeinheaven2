@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Stjärntecken Kompatibilitet',
+  title: 'Match Made in Heaven',
   description: 'Upptäck hur väl ditt stjärntecken passar med andra för kärlek och vänskap',
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
-      <body className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+  <body className="min-h-screen">
         {children}
       </body>
     </html>

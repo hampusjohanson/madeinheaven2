@@ -57,7 +57,7 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
       animate={{ opacity: 1, y: 0 }}
       className="space-y-3"
     >
-      <label className="block text-sm font-medium text-gray-700 flex items-center gap-2">
+  <label className="block text-sm font-medium text-white flex items-center gap-2">
         <Calendar className="w-4 h-4 text-purple-500" />
         {label}
       </label>

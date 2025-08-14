@@ -130,13 +130,9 @@ export default function DetailedResult({ date1, date2, result }: DetailedResultP
   }
   return (
     <div className="flex flex-col items-center min-h-[140px] w-[340px] mx-auto p-6 bg-white rounded-xl shadow relative">
-      {/* Magiska stjärnor och trollkarlar i bakgrunden */}
-      <span className="absolute top-2 left-4 text-2xl select-none">🧙‍♂️✨</span>
-      <span className="absolute top-2 right-4 text-2xl select-none">🌟🔮</span>
-      <span className="absolute bottom-2 left-8 text-xl select-none">🪄</span>
-      <span className="absolute bottom-2 right-8 text-xl select-none">🌠</span>
+      {/* Ingen emoji, bara ren text */}
       <p className="text-gray-700 text-lg font-medium text-center">
-        <span className="text-2xl mr-2">✨</span>{mainFunnyText}<span className="text-2xl ml-2">🔮</span>
+        {mainFunnyText}
       </p>
 
       {/* Planet Breakdown (skip Sol, already shown above) */}

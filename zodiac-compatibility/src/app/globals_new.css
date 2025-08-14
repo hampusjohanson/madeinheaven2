@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 15, 70;
+  --background-end-rgb: 15, 15, 70;
+  --primary-midnight-blue: 15, 15, 70;
+  --accent-gold: 212, 175, 55;
+  --accent-silver: 192, 192, 192;
+  --accent-light-gray: 220, 220, 220;
+  --card-bg: 24, 24, 107;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(15, 15, 70);
+  background-attachment: fixed;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Constellation patterns overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+  background-image: 
+    /* Orion constellation */
+    radial-gradient(circle at 25% 30%, white 1px, transparent 2px),
+    radial-gradient(circle at 30% 35%, white 1.5px, transparent 2px),
+    radial-gradient(circle at 35% 25%, white 1px, transparent 2px),
+    radial-gradient(circle at 22% 45%, white 1.2px, transparent 2px),
+    radial-gradient(circle at 28% 50%, white 1.8px, transparent 2px),
+    radial-gradient(circle at 34% 55%, white 1.3px, transparent 2px),
+    radial-gradient(circle at 26% 60%, white 1px, transparent 2px),
+    
+    /* Big Dipper constellation */
+    radial-gradient(circle at 70% 20%, white 1.5px, transparent 2px),
+    radial-gradient(circle at 75% 25%, white 1.3px, transparent 2px),
+    radial-gradient(circle at 80% 30%, white 1.7px, transparent 2px),
+    radial-gradient(circle at 85% 35%, white 1.2px, transparent 2px),
+    radial-gradient(circle at 88% 40%, white 1.4px, transparent 2px),
+    radial-gradient(circle at 82% 45%, white 1.6px, transparent 2px),
+    radial-gradient(circle at 78% 50%, white 1.1px, transparent 2px),
+    
+    /* Cassiopeia constellation */
+    radial-gradient(circle at 60% 70%, white 1.4px, transparent 2px),
+    radial-gradient(circle at 65% 75%, white 1.2px, transparent 2px),
+    radial-gradient(circle at 70% 68%, white 1.6px, transparent 2px),
+    radial-gradient(circle at 75% 73%, white 1.3px, transparent 2px),
+    radial-gradient(circle at 80% 70%, white 1.5px, transparent 2px),
+    
+    /* Additional scattered stars */
+    radial-gradient(circle at 15% 75%, white 1px, transparent 2px),
+    radial-gradient(circle at 45% 85%, white 1.2px, transparent 2px),
+    radial-gradient(circle at 90% 60%, white 1.1px, transparent 2px),
+    radial-gradient(circle at 50% 15%, white 1.3px, transparent 2px),
+    radial-gradient(circle at 10% 50%, white 1px, transparent 2px);
+}
+
+/* Constellation lines */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  background-image: 
+    /* Orion belt lines */
+    linear-gradient(45deg, transparent 24%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.3) 26%, transparent 27%),
+    linear-gradient(35deg, transparent 29%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.3) 31%, transparent 32%),
+    linear-gradient(55deg, transparent 33%, rgba(255,255,255,0.3) 34%, rgba(255,255,255,0.3) 35%, transparent 36%),
+    
+    /* Big Dipper lines */
+    linear-gradient(15deg, transparent 69%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0.3) 71%, transparent 72%),
+    linear-gradient(25deg, transparent 74%, rgba(255,255,255,0.3) 75%, rgba(255,255,255,0.3) 76%, transparent 77%),
+    linear-gradient(35deg, transparent 79%, rgba(255,255,255,0.3) 80%, rgba(255,255,255,0.3) 81%, transparent 82%);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
+
+/* Star twinkling effect */
+body::after {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(var(--card-bg), 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-gold), 0.7);
+  border-radius: 4px;
+  border: 1px solid rgba(var(--accent-gold), 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--accent-gold), 0.9);
+}

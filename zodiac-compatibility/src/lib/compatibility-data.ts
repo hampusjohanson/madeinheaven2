@@ -102,34 +102,69 @@ export const saturnCompatibility: Record<string, Record<string, CompatibilityRes
 }
 
 import { getBirthData } from './birth-data'
+import matchScores from './zodiac_match_scores.json'
 
 // Huvudfunktion för att beräkna total kompatibilitet
 export function calculateAdvancedCompatibility(date1: string, date2: string) {
   const birthData1 = getBirthData(date1)
   const birthData2 = getBirthData(date2)
 
-  // Klassisk kompatibilitet för alla planeter
-  const sunScore = getClassicScore(birthData1.sun, birthData2.sun)
-  const moonScore = getClassicScore(birthData1.moon, birthData2.moon)
-  const venusMarsScore = getClassicScore(birthData1.venus, birthData2.venus)
-  const mercuryScore = getClassicScore(birthData1.mercury, birthData2.mercury)
-  const jupiterScore = getClassicScore(birthData1.jupiter, birthData2.jupiter)
-  const saturnScore = getClassicScore(birthData1.saturn, birthData2.saturn)
+  // Mappning från bestämd form till grundform
+  const signMap: Record<string, string> = {
+    'Väduren': 'Vädur',
+    'Oxen': 'Oxen',
+    'Tvillingarna': 'Tvillingarna',
+    'Kräftan': 'Kräftan',
+    'Lejonet': 'Lejon',
+    'Jungfrun': 'Jungfru',
+    'Vågen': 'Våg',
+    'Skorpionen': 'Skorpion',
+    'Skytten': 'Skytt',
+    'Stenbocken': 'Stenbock',
+    'Vattumannen': 'Vattuman',
+    'Fiskarna': 'Fisk',
+    // fallback: return original if not found
+  }
+  function mapSign(s: string) { return signMap[s] || s }
 
-  // Totalen som snitt av alla
-  const totalScore = Math.round((sunScore + moonScore + venusMarsScore + mercuryScore + jupiterScore + saturnScore) / 6)
+  // Hämta matchPercent från JSON baserat på sol/måne för båda profiler
+  const aSol = mapSign(birthData1.sun)
+  const aMoon = mapSign(birthData1.moon)
+  const bSol = mapSign(birthData2.sun)
+  const bMoon = mapSign(birthData2.moon)
+  console.log('DEBUG zodiac:', { aSol, aMoon, bSol, bMoon })
+  console.log('DEBUG matchScores length:', matchScores.length)
+  const found = matchScores.find(
+    (r: any) =>
+      (r.personA.sol === aSol && r.personA.måne === aMoon && r.personB.sol === bSol && r.personB.måne === bMoon)
+      ||
+      (r.personA.sol === bSol && r.personA.måne === bMoon && r.personB.sol === aSol && r.personB.måne === aMoon)
+  );
+
+  let fallbackFound = undefined;
+  if (!found) {
+    // Sök efter match där bara måne matchar, ignorera sol helt
+    fallbackFound = matchScores.find(
+      (r: any) =>
+        (r.personA.måne === aMoon && r.personB.måne === bMoon)
+        ||
+        (r.personA.måne === bMoon && r.personB.måne === aMoon)
+    );
+    console.log('DEBUG fallbackFound:', fallbackFound);
+  }
+  const totalScore = found ? found.matchPercent : (fallbackFound ? fallbackFound.matchPercent : 0);
 
   return {
     total: totalScore,
     breakdown: {
-      sun: sunScore,
-      moon: moonScore,
-      venusMars: venusMarsScore,
-      mercury: mercuryScore,
-      jupiter: jupiterScore,
-      saturn: saturnScore
+      sun: totalScore,
+      moon: 0,
+      venusMars: 0,
+      mercury: 0,
+      jupiter: 0,
+      saturn: 0
     },
-    summary: getFunnyCompatibilitySummary(birthData1.sun, birthData2.sun, sunScore)
+    summary: found || fallbackFound ? `Matchprocent enligt ny beräkning: ${totalScore}%` : 'Ingen data hittades.'
   }
 }
 
@@ -283,4 +318,4 @@ function getCompatibilitySummary(score: number): string {
   if (score >= 70) return "Bra kompatibilitet! Ni har potential för något speciellt. Som en intressant podd."
   if (score >= 60) return "Okej match. Ni kan lära känna varandra bättre. Som en första dejt som kan bli något."
   return "Kanske inte den bästa matchen, men ge det en chans! Som en reality-show som är så dålig att den blir bra."
-} 
+}
