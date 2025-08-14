@@ -57,10 +57,18 @@ export default function DateInput({ onDateChange, label, placeholder }: DateInpu
       animate={{ opacity: 1, y: 0 }}
       className="space-y-3"
     >
-  <label className="block text-sm font-medium text-white flex items-center gap-2">
-        <Calendar className="w-4 h-4 text-purple-500" />
-        {label}
-      </label>
+  <div 
+    className="inline-block px-3 py-2 rounded-lg border border-gray-300 mb-3" 
+    style={{ 
+      backgroundColor: 'rgba(220, 220, 220, 0.95)',
+      backdropFilter: 'blur(2px)'
+    }}
+  >
+    <label className="block text-sm font-medium text-black flex items-center gap-2">
+      <Calendar className="w-4 h-4" style={{ color: 'rgb(var(--accent-gold))' }} />
+      {label}
+    </label>
+  </div>
       <div className="flex gap-2">
         <select
           value={year}
